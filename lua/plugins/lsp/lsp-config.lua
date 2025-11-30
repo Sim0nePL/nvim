@@ -40,45 +40,18 @@ return {
 
 		end,
 		keys = {
-			{ '<leader>rn', vim.lsp.buf.rename, 			{ desc = 'Rename'} },
-			{ '<leader>ca', vim.lsp.buf.code_action, 	{ desc = 'Code Actions'} },
-			{ '<leader>gi', vim.lsp.buf.code_action, 	{ desc = 'Goto Implementation'} },
+			-- Keymappings
+			{ '<leader>rn', vim.lsp.buf.rename, 				{ desc = 'Rename'} },
+			{ '<leader>ca', vim.lsp.buf.code_action, 		{ desc = 'Code Actions'} },
+			{ '<leader>gi', vim.lsp.buf.implementation, { desc = 'Goto Implementation'} },
 
 			{ '<leader>fd', require('telescope.builtin').diagnostics, { desc = 'Find Diagnostics'} },
 		},
 		dependencies = {
-			{ "mason-org/mason-lspconfig.nvim", opts = {
-					ensure_installed = vim.tbl_keys(servers or {})
-				}
-			},
 			{
-				"mason-org/mason.nvim",
-				opts = {
-					ui = {
-						icons = {
- 							package_installed = "✓",
-		 					package_pending = "➜",
-							package_uninstalled = "✗",
-				} } }
+				"mason-org/mason-lspconfig.nvim",
+				opts = { ensure_installed = vim.tbl_keys(servers or {}) }
 			},
 		}
 	},
-	{
-    "folke/lazydev.nvim",
-    ft = "lua", -- only load on lua files
-    opts = {
-      library = {
-        -- See the configuration section for more details
-        -- Load luvit types when the `vim.uv` word is found
-        { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-      },
-    },
-	},
-	{ "j-hui/fidget.nvim", opts = {
-		notification = {
-			window = {
-				winblend = 0,
-			}
-		} }
-	}
 }
