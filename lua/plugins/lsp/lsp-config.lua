@@ -6,8 +6,8 @@ local servers = {
 				runtime = {
 					pathStrict = false, -- Fix for LazyDev not working
 				},
-			}
-		}
+			},
+		},
 	},
 }
 
@@ -18,9 +18,9 @@ return {
 	init = function()
 		-- LSP config
 		for server, config in pairs(servers) do
-			-- if config ~= nil then
+			if config ~= nil then
 				vim.lsp.config(server, config)
-			-- end
+			end
 			vim.lsp.enable(server)
 		end
 
