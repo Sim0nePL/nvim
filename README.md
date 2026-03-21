@@ -1,10 +1,6 @@
-# nvim
-
-Yet Another Neovim Config.
-
-## Description
-It stands on [lazy.nvim](https://github.com/folke/lazy.nvim) and is almost fully lazy loaded.
-There is no single `config = function() [..] end` everything sits in opts and init functions.
+# Yet Another Neovim Config
+It stands on [lazy.nvim](https://github.com/folke/lazy.nvim) and is almost fully lazy loaded.<br>
+There is no single `config = function() [..] end` everything sits in `opts` and `init` function.<br>
 Launches in ~25ms.
 
 ## Autocompletion
